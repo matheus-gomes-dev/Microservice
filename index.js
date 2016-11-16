@@ -18,8 +18,10 @@ app.get('/', function(request, response) {
   //var IPstr = request.connection.remoteAddress;
   //var IP = IPstr.substring((IPstr.indexOf('f:')+2),(IPstr.length));
   //response.send(IP);
-  if (ipaddr.isValid)
-  	response.json(ipaddr.parse);
+  if (ipaddr.isValid){
+  	var IP = JSON.stringify(ipaddr.parse);
+  	response.send(IP);
+  }
   else
   	response.send("IP invalido");
   //var IP = request.ip;
