@@ -13,7 +13,9 @@ app.get('/', function(request, response) {
   var OperationalSystem = (process.platform);
   //response.send(OperationalSystem);
   var local = request.headers["accept-language"];
-  response.send(local);
+  //response.send(local);
+  var IP = request.connection.remoteAddress;
+  response.send(IP);
 
 });
 
