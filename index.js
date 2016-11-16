@@ -14,8 +14,15 @@ app.get('/', function(request, response) {
   //response.send(OperationalSystem);
   var local = request.headers["accept-language"];
   //response.send(local);
-  var IP = request.connection.remoteAddress;
+  //var IPstr = request.connection.remoteAddress;
+  //var IP = IPstr.substring((IPstr.indexOf('f:')+2),(IPstr.length));
+  //response.send(IP);
+  var IP = request.ip;
   response.send(IP);
+  //var ObjResponse = {
+  //	IP : 
+  //	OperationalSystem : (process.platform),
+  // }
 
 });
 
