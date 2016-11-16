@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var ipaddr = require('ipaddr.js');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -17,8 +18,10 @@ app.get('/', function(request, response) {
   //var IPstr = request.connection.remoteAddress;
   //var IP = IPstr.substring((IPstr.indexOf('f:')+2),(IPstr.length));
   //response.send(IP);
-  var IP = request.ip;
-  response.send(IP);
+  if (ipaddr.isValid)
+  	response.json(ipaddr.parse);
+  //var IP = request.ip;
+  //response.send(IP);
   //var ObjResponse = {
   //	IP : 
   //	OperationalSystem : (process.platform),
