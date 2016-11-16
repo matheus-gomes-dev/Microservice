@@ -19,7 +19,7 @@ app.get('/', function(request, response) {
   //var IP = IPstr.substring((IPstr.indexOf('f:')+2),(IPstr.length));
   //response.send(IP);
   if (ipaddr.isValid){
-  	var IP = JSON.stringify(ipaddr.parse);
+  	var IP = JSON.stringify(ipaddr.parse(request.connection.remoteAddress));
   	response.send(IP);
   	console.log(IP);
   	//
