@@ -20,6 +20,8 @@ app.get('/', function(request, response) {
   //response.send(IP);
   if (ipaddr.isValid)
   	response.json(ipaddr.parse);
+  else
+  	response.send("IP invalido");
   //var IP = request.ip;
   //response.send(IP);
   //var ObjResponse = {
