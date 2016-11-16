@@ -22,6 +22,7 @@ app.get('/', function(request, response) {
   	var IP = JSON.stringify(ipaddr.parse);
   	response.send(IP);
   	console.log(IP);
+  	//
   }
   else
   	response.send("IP invalido");
