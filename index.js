@@ -10,7 +10,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.send("Teste");
+  var isWin = /^win/.test(process.platform);
+  response.send(isWin);
 });
 
 app.listen(app.get('port'), function() {
