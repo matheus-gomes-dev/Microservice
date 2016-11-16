@@ -10,12 +10,16 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  var isWin = (process.platform);
-  response.send(isWin);
+  var OperationalSystem = (process.platform);
+  //response.send(OperationalSystem);
+  var local = request.headers["accept-language"];
+  response.send(local);
+
 });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-
+//http://stackoverflow.com/questions/8683895/how-do-i-determine-the-current-operating-system-with-node-js
+//http://stackoverflow.com/questions/11845471/how-to-get-user-language-in-nodejs-expresjs
