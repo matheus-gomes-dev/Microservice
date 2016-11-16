@@ -10,7 +10,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  var isWin = /^win/.test(process.platform);
+  var isWin = (process.platform);
   response.send(isWin);
 });
 
